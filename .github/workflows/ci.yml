@@ -1,5 +1,5 @@
 name: CI
-
+run: PYTHONPATH=. pytest --cov=my_project
 on:
   push:
     branches: [main]
