@@ -25,10 +25,12 @@ jobs:
         pip install -r requirements.txt
 
     - name: Set PYTHONPATH
-      run: export PYTHONPATH=.
+      run: |
+        export PYTHONPATH=$(pwd)  # Устанавливаем PYTHONPATH в текущую директорию
 
     - name: Run tests with coverage
-      run: pytest --cov=my_project
+      run: |
+        pytest --cov=my_project
 
     - name: Upload coverage to Coveralls
       env:
